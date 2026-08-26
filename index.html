@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0e1117" />
+  <title>Troll.Bank</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <script src="https://telegram.org/js/telegram-web-app.js?63"></script>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <div class="brand">Troll<span>.Bank</span></div>
+        <div class="subtitle" id="welcome">Telegram Wallet</div>
+      </div>
+      <button class="avatar" id="profileBtn" aria-label="Профиль">T</button>
+    </header>
+
+    <section class="balance-card">
+      <div class="muted">Общий баланс</div>
+      <div class="balance">$1,284.52</div>
+      <div class="change">+4.28% за 24ч</div>
+      <div class="address-row">
+        <span id="walletAddress">UQ...7K9P</span>
+        <button class="copy" id="copyBtn">Копировать</button>
+      </div>
+    </section>
+
+    <section class="actions">
+      <button class="action" data-screen="send"><span>↗</span><b>Отправить</b></button>
+      <button class="action" data-screen="receive"><span>↓</span><b>Получить</b></button>
+      <button class="action" data-screen="swap"><span>⇄</span><b>Swap</b></button>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><h2>Активы</h2><button id="allAssets">Все</button></div>
+      <div class="asset-list">
+        <div class="asset"><div class="coin ton">T</div><div class="asset-main"><b>Toncoin</b><span>TON</span></div><div class="asset-value"><b>15.20 TON</b><span>$102.64</span></div></div>
+        <div class="asset"><div class="coin usdt">$</div><div class="asset-main"><b>Tether USD</b><span>USDT</span></div><div class="asset-value"><b>950.00 USDT</b><span>$950.00</span></div></div>
+        <div class="asset"><div class="coin btc">₿</div><div class="asset-main"><b>Bitcoin</b><span>BTC</span></div><div class="asset-value"><b>0.0031 BTC</b><span>$231.88</span></div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-title"><h2>Последние операции</h2><button id="historyBtn">История</button></div>
+      <div class="tx-list">
+        <div class="tx"><div class="tx-icon receive">↓</div><div class="tx-main"><b>Получение</b><span>Сегодня, 21:43</span></div><strong class="positive">+120 USDT</strong></div>
+        <div class="tx"><div class="tx-icon send">↗</div><div class="tx-main"><b>Отправка</b><span>Сегодня, 18:12</span></div><strong>-0.85 TON</strong></div>
+      </div>
+    </section>
+
+    <nav class="bottom-nav">
+      <button class="nav active"><span>⌂</span>Главная</button>
+      <button class="nav" data-screen="wallet"><span>◈</span>Кошелёк</button>
+      <button class="nav" data-screen="swap"><span>⇄</span>Swap</button>
+      <button class="nav" id="settingsBtn"><span>⚙</span>Настройки</button>
+    </nav>
+  </main>
+
+  <div class="modal hidden" id="modal">
+    <div class="modal-card">
+      <button class="close" id="closeModal">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
